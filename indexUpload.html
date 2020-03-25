@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/upload.css">
+</head>
+<body>
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">John Duprey </a>
+        </div>
+    </div>
+</div>
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <h1>File Loading &amp; Saving<br><small>From the Client Side</small></h1>
+        <p>You can <b>load</b> files into your browser on the client side using the <a href="http://www.w3.org/TR/file-upload/">HTML5 File API</a>. See <a href="https://www.html5rocks.com/en/tutorials/file/dndfiles/">this HTML5Rocks article</a> for usage examples. You can <b>save</b> files on the client side with ease using <a href="https://github.com/eligrey/FileSaver.js" target="_new">FileSave.js</a>.</p>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Saving text -->
+    <div class="row">
+        <div class="col-sm-12">
+            <section id="save-text">
+                <h2>Saving Text</h2>
+                <form onsubmit="return saveText(this, $('#fname').val(), $('#textInput').val(), 'text/plain;charset=utf-8')">
+          <span class="loadblock" class="pull-right">
+            <span class="file-details"></span><input type="file" id="load-text-file" name="load-text-file" />
+          </span>
+                    <textarea class="input form-control" id="textInput" rows="5" placeholder="Type some text here, then enter a file name and click &quot;Save&quot;."></textarea>
+                    <br>
+                    <div>
+            <span class="saveblock" class="pull-right">
+              <input id="fname" type="text" placeholder="filename"></input><span>.txt</span>
+              <button class="btn btn-sm btn-success" type="submit" role="button">Save</button>
+            </span>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+    <!-- Saving HTML -->
+    <div class="row">
+        <div class="col-sm-12">
+            <section id="save-html">
+                <h2>Saving HTML</h2>
+                <p>You can edit HTML using the "<a target="_blank" href="http://html5doctor.com/the-contenteditable-attribute/">contenteditable</a>" attribute.</p>
+                <form onsubmit="return saveText(this, $('#fname-html').val(), $('#htmlInput').html(), 'text/html;charset=utf-8')">
+                    <div class="loadblock" class="pull-right">
+                        <span class="file-details"></span><input type="file" id="load-html-file" name="load-html-file" />
+                    </div>
+                    <div id="htmlInput" contenteditable="true">Type some text here, then enter a file name and click &quot;Save&quot;.</div>
+                    <br>
+                    <div class="saveblock" class="pull-right">
+                        <input id="fname-html" type="text" placeholder="filename"></input><span>.html</span>
+                        <button class="btn btn-sm btn-success" type="submit" role="button">Save</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<footer>
+    <p>&copy; John Duprey 2014</p>
+</footer>
+</div> <!-- /container -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')
+</script>
+<script src="js/FileSaver.js"></script>
+<script src="js/upload.js"></script>
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+    (function(b, o, i, l, e, r) {
+        b.GoogleAnalyticsObject = l;
+        b[l] || (b[l] =
+            function() {
+                (b[l].q = b[l].q || []).push(arguments)
+            });
+        b[l].l = +new Date;
+        e = o.createElement(i);
+        r = o.getElementsByTagName(i)[0];
+        e.src = '//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e, r)
+    }(window, document, 'script', 'ga'));
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+</script>
+</body>
+</html>

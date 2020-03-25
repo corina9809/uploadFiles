@@ -1,0 +1,39 @@
+body
+{
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* webkit solution */
+.saveblock ::-webkit-input-placeholder { text-align:right; }
+/* mozilla solution */
+.saveblock input:-moz-placeholder { text-align:right; }
+
+.saveblock input { text-align:right; background-color: #00b28f}
+
+input[type=file]
+{
+    /* display: inline-block; */
+}
+
+/* webkit solution */
+.loadblock ::-webkit-input-placeholder { text-align:right; }
+/* mozilla solution */
+.loadblock input:-moz-placeholder { text-align:right; }
+
+.loadblock input
+{
+    text-align:right;
+    padding: 5px;
+}
+
+[contenteditable="true"]
+{
+    padding: 10px;
+    outline: 3px dashed #CCC;
+}
+
+[contenteditable]:hover
+{
+    background-color: yellow;
+}
